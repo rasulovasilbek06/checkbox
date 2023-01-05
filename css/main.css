@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1a2a33;
+}
+.grid {
+  gap: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+.box {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f3641;
+  box-shadow: inset 0px -8px 0px #10212a;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 140px;
+  margin-bottom: 140px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  height: 133.5px;
+  width: 138px;
+  background-color: #1f3641;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  content: url(../images/x.png);
+}
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
