@@ -75,3 +75,47 @@ span {
   align-items: center;
   justify-content: center;
 }
+
+
+/* dark/light mode  */
+
+
+input[id="mode"] {
+  display: none;
+}
+
+label[for="mode"] {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  color: #f2f2f2;
+  cursor: pointer;
+  width: 60px;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 1px;
+  transition: all 1s ease-in;
+}
+
+label[for="mode"] > div {
+  width: 30px;
+  height: 30px;
+  background-color: #10212a;
+  border-radius: 50%;
+  transition: all 1s;
+}
+
+input[id="mode"]:checked + label {
+  background-color: #10212a;
+}
+
+input[id="mode"]:checked + label > div {
+  background-color: #f2f2f2;
+  transform: translateX(30px);
+}
+
+input[id="mode"]:checked ~ .wrapper {
+  --body-bg: #f2f2f2;
+  --main-text-color: #1f3641;
+}
